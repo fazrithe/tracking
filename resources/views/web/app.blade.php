@@ -85,6 +85,13 @@
     <div class="mt-5 d-flex justify-content-center">
         <img src="{{ asset('public/img/logo-murni.png') }}" width="20%"/>
     </div>
+    @if($response['status'] == 400)
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card p-4 mt-3  text-center">
+            <h1 style="color: #0693e3;">{{$response['message']}}</h1>
+        </div>
+    </div>
+    @else
     <div class="container mt-5 d-flex justify-content-center">
         <div class="card p-4 mt-3">
            <div class="first d-flex justify-content-between align-items-center mb-3">
@@ -107,6 +114,7 @@
             @endforeach
         </div>
      </div>
+     @endif
 </body>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' />
 <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js') }}"></script>
